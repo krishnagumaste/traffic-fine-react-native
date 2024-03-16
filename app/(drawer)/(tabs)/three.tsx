@@ -2,21 +2,17 @@ import { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Button, Input, YStack, H2, Theme, XStack } from 'tamagui';
 
-export default function TabTwoScreen() {
-  const [vehicleNumber, setVehicleNumber] = useState('');
+export default function TabThreeScreen() {
+  const [licenseNumber, setLicenseNumber] = useState('');
 
   return (
     <Theme name="light">
       <YStack flex={1} alignItems="center">
-        <H2 style={styles.header}>Check Fine</H2>
+        <H2 style={styles.header}>Check Driver Details</H2>
         <XStack alignItems="center" space="$2" style={styles.xstack}>
-          <Input
-            size="$3"
-            placeholder="Enter Vehicle Number"
-            onChangeText={(newText) => setVehicleNumber(newText)}
-            value={vehicleNumber}
-          />
-          <Button size="$3" theme="active" onPress={() => console.log(vehicleNumber)}>
+          <Input size="$3" placeholder="Enter Driving License Number" onChangeText={(newText) => setLicenseNumber(newText)}
+            value={licenseNumber}/>
+          <Button size="$3" theme="active" onPress={() => console.log(licenseNumber)}>
             Go
           </Button>
         </XStack>

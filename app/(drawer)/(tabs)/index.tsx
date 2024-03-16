@@ -1,15 +1,18 @@
-import { YStack, H2, Separator, Theme } from 'tamagui';
-
-import EditScreenInfo from '../../../components/edit-screen-info';
+import { StyleSheet } from 'react-native';
+import { YStack, H2, Theme } from 'tamagui';
 
 export default function TabOneScreen() {
   return (
     <Theme name="light">
-      <YStack flex={1} alignItems="center" justifyContent="center">
-        <H2>Tab One</H2>
-        <Separator />
-        <EditScreenInfo path="app/(drawer)/(tabs)/index.tsx" />
+      <YStack flex={1} alignItems="center">
+        <H2 style={styles.header}>Add Fine</H2>
       </YStack>
     </Theme>
   );
 }
+
+const styles = StyleSheet.create({
+  header: {
+    marginTop: 20,
+  },
+});
