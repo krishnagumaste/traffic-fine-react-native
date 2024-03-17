@@ -1,30 +1,24 @@
+/* eslint-disable prettier/prettier */
 import { AntDesign, FontAwesome6 } from '@expo/vector-icons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 
-export default function TabLayout() {
+export default function TabLayout2() {
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: 'black',
       }}>
-      <Tabs.Screen
+       <Tabs.Screen
         name="index"
-        options={{
-          title: 'Add Fine',
-          tabBarIcon: ({ color }) => <AntDesign name="pluscircleo" size={24} color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="two"
         options={{
           title: 'Check Fine',
           tabBarIcon: ({ color }) => <FontAwesome6 name="list-check" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="three"
+        name="two"
         options={{
           title: 'Driver Details',
           tabBarIcon: ({ color }) => (
@@ -33,7 +27,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="four"
+        name="three"
         options={{
           title: 'Vehicle Details',
           tabBarIcon: ({ color }) => <AntDesign name="car" size={24} color={color} />,

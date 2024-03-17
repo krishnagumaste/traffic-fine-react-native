@@ -37,6 +37,28 @@ const DrawerLayout = () => (
         ),
       }}
     />
+    <Drawer.Screen
+      name="(tabs2)"
+      options={{
+        headerTitle: 'User',
+        drawerLabel: 'User',
+        drawerIcon: ({ size, color }) => <FontAwesome name="user-o" size={24} color="black" />,
+        headerRight: () => (
+          <Link href="/modal" asChild>
+            <Pressable>
+              {({ pressed }) => (
+                <FontAwesome
+                  name="info-circle"
+                  size={25}
+                  color="gray"
+                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
+                />
+              )}
+            </Pressable>
+          </Link>
+        ),
+      }}
+    />
   </Drawer>
 );
 
