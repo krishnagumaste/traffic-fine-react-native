@@ -1,4 +1,4 @@
-import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome, Ionicons, MaterialIcons, FontAwesome6 } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
 import { Pressable, StyleSheet } from 'react-native';
@@ -42,7 +42,29 @@ const DrawerLayout = () => (
       options={{
         headerTitle: 'User',
         drawerLabel: 'User',
-        drawerIcon: ({ size, color }) => <FontAwesome name="user-o" size={24} color="black" />,
+        drawerIcon: ({ size, color }) => <FontAwesome6 name="user-large" size={24} color="black" />,
+        headerRight: () => (
+          <Link href="/modal" asChild>
+            <Pressable>
+              {({ pressed }) => (
+                <FontAwesome
+                  name="info-circle"
+                  size={25}
+                  color="gray"
+                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
+                />
+              )}
+            </Pressable>
+          </Link>
+        ),
+      }}
+    />
+    <Drawer.Screen
+      name="(tabs3)"
+      options={{
+        headerTitle: 'Admin',
+        drawerLabel: 'Admin',
+        drawerIcon: ({ size, color }) => <FontAwesome6 name="user-gear" size={24} color="black" />,
         headerRight: () => (
           <Link href="/modal" asChild>
             <Pressable>
