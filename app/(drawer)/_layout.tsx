@@ -2,7 +2,7 @@ import { Ionicons, FontAwesome6, MaterialCommunityIcons } from '@expo/vector-ico
 import { Link } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
 import { Pressable, StyleSheet } from 'react-native';
-import { SizableText } from 'tamagui';
+import { SizableText, XStack } from 'tamagui';
 
 const DrawerLayout = () => (
   <Drawer>
@@ -26,12 +26,17 @@ const DrawerLayout = () => (
           <Link href="/modal" asChild>
             <Pressable>
               {({ pressed }) => (
-                <SizableText
-                  size="$3"
-                  color="grey"
-                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}>
-                  LogOut{' '}
-                </SizableText>
+                <XStack alignItems="center">
+                  <SizableText size="$3" color="grey" style={[{ opacity: pressed ? 0.5 : 1 }]}>
+                    LogOut
+                  </SizableText>
+                  <Ionicons
+                    name="log-out-outline"
+                    size={24}
+                    color="grey"
+                    style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
+                  />
+                </XStack>
               )}
             </Pressable>
           </Link>
@@ -50,12 +55,17 @@ const DrawerLayout = () => (
           <Link href="/modal" asChild>
             <Pressable>
               {({ pressed }) => (
-                <SizableText
-                  size="$3"
-                  color="grey"
-                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}>
-                  LogOut{' '}
-                </SizableText>
+                <XStack alignItems="center">
+                  <SizableText size="$3" color="grey" style={[{ opacity: pressed ? 0.5 : 1 }]}>
+                    LogOut
+                  </SizableText>
+                  <Ionicons
+                    name="log-out-outline"
+                    size={24}
+                    color="grey"
+                    style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
+                  />
+                </XStack>
               )}
             </Pressable>
           </Link>
@@ -74,12 +84,17 @@ const DrawerLayout = () => (
           <Link href="/modal" asChild>
             <Pressable>
               {({ pressed }) => (
-                <SizableText
-                  size="$3"
-                  color="grey"
-                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}>
-                  LogOut{' '}
-                </SizableText>
+                <XStack alignItems="center">
+                  <SizableText size="$3" color="grey" style={[{ opacity: pressed ? 0.5 : 1 }]}>
+                    LogOut
+                  </SizableText>
+                  <Ionicons
+                    name="log-out-outline"
+                    size={24}
+                    color="grey"
+                    style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
+                  />
+                </XStack>
               )}
             </Pressable>
           </Link>
@@ -91,8 +106,7 @@ const DrawerLayout = () => (
 
 const styles = StyleSheet.create({
   headerRight: {
-    marginRight: 15,
-    marginTop: 8,
+    marginRight: 10,
   },
 });
 
