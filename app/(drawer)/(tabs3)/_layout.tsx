@@ -13,14 +13,14 @@ export default function TabLayout3() {
        <Tabs.Screen
         name="index"
         options={{
-          title: 'Check Fine',
+          title: 'Fine',
           tabBarIcon: ({ color }) => <FontAwesome6 name="list-check" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
-          title: 'Driver Details',
+          title: 'Driver',
           tabBarIcon: ({ color }) => (
             <FontAwesome name="drivers-license-o" size={24} color={color} />
           ),
@@ -29,7 +29,21 @@ export default function TabLayout3() {
       <Tabs.Screen
         name="three"
         options={{
-          title: 'Vehicle Details',
+          title: 'Vehicle',
+          tabBarIcon: ({ color }) => <AntDesign name="car" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="four"
+        options={{
+          title: 'Traffic Police',
+          tabBarIcon: ({ color }) => <AntDesign name="car" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="five"
+        options={{
+          title: 'User',
           tabBarIcon: ({ color }) => <AntDesign name="car" size={24} color={color} />,
         }}
       />
