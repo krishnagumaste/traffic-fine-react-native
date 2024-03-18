@@ -2,12 +2,12 @@
 import { StyleSheet } from 'react-native';
 import { YStack, H2, Theme } from 'tamagui';
 
-export default function TabOneScreen() {
+export default function TabThreeScreen() {
 
   return (
     <Theme name="light">
       <YStack flex={1} alignItems="center">
-        <H2 style={styles.header}>Fine</H2>
+        <H2 style={styles.header}>Vehicle</H2>
       </YStack>
     </Theme>
   );

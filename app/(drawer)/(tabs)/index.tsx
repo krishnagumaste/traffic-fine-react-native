@@ -10,7 +10,7 @@ export default function TabOneScreen() {
   const [fineType, setFineType] = useState('');
   const [fineLocation, setFineLocation] = useState('');
   const [image, setImage] = useState('');
-  const [date, setDate] = useState('');
+  // const [date, setDate] = useState('');
 
   const clickImage = async () => {
     try {

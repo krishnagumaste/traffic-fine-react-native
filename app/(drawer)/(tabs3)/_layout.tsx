@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { AntDesign, FontAwesome6 } from '@expo/vector-icons';
+import { AntDesign, FontAwesome6, MaterialCommunityIcons } from '@expo/vector-icons';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Tabs } from 'expo-router';
 
@@ -37,14 +37,14 @@ export default function TabLayout3() {
         name="four"
         options={{
           title: 'Traffic Police',
-          tabBarIcon: ({ color }) => <AntDesign name="car" size={24} color={color} />,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="police-badge-outline" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="five"
         options={{
           title: 'User',
-          tabBarIcon: ({ color }) => <AntDesign name="car" size={24} color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome name="user-o" size={24} color={color} />,
         }}
       />
     </Tabs>

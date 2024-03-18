@@ -1,7 +1,8 @@
-import { FontAwesome, Ionicons, MaterialIcons, FontAwesome6 } from '@expo/vector-icons';
+import { Ionicons, FontAwesome6, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
 import { Pressable, StyleSheet } from 'react-native';
+import { SizableText } from 'tamagui';
 
 const DrawerLayout = () => (
   <Drawer>
@@ -19,18 +20,18 @@ const DrawerLayout = () => (
         headerTitle: 'Traffic Police',
         drawerLabel: 'Traffic Police',
         drawerIcon: ({ size, color }) => (
-          <MaterialIcons name="local-police" size={24} color="black" />
+          <MaterialCommunityIcons name="police-badge" size={size} color={color} />
         ),
         headerRight: () => (
           <Link href="/modal" asChild>
             <Pressable>
               {({ pressed }) => (
-                <FontAwesome
-                  name="info-circle"
-                  size={25}
-                  color="gray"
-                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
-                />
+                <SizableText
+                  size="$3"
+                  color="grey"
+                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}>
+                  LogOut{' '}
+                </SizableText>
               )}
             </Pressable>
           </Link>
@@ -42,17 +43,19 @@ const DrawerLayout = () => (
       options={{
         headerTitle: 'User',
         drawerLabel: 'User',
-        drawerIcon: ({ size, color }) => <FontAwesome6 name="user-large" size={24} color="black" />,
+        drawerIcon: ({ size, color }) => (
+          <FontAwesome6 name="user-large" size={size} color={color} />
+        ),
         headerRight: () => (
           <Link href="/modal" asChild>
             <Pressable>
               {({ pressed }) => (
-                <FontAwesome
-                  name="info-circle"
-                  size={25}
-                  color="gray"
-                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
-                />
+                <SizableText
+                  size="$3"
+                  color="grey"
+                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}>
+                  LogOut{' '}
+                </SizableText>
               )}
             </Pressable>
           </Link>
@@ -64,17 +67,19 @@ const DrawerLayout = () => (
       options={{
         headerTitle: 'Admin',
         drawerLabel: 'Admin',
-        drawerIcon: ({ size, color }) => <FontAwesome6 name="user-gear" size={24} color="black" />,
+        drawerIcon: ({ size, color }) => (
+          <FontAwesome6 name="user-gear" size={size} color={color} />
+        ),
         headerRight: () => (
           <Link href="/modal" asChild>
             <Pressable>
               {({ pressed }) => (
-                <FontAwesome
-                  name="info-circle"
-                  size={25}
-                  color="gray"
-                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}
-                />
+                <SizableText
+                  size="$3"
+                  color="grey"
+                  style={[styles.headerRight, { opacity: pressed ? 0.5 : 1 }]}>
+                  LogOut{' '}
+                </SizableText>
               )}
             </Pressable>
           </Link>
@@ -87,6 +92,7 @@ const DrawerLayout = () => (
 const styles = StyleSheet.create({
   headerRight: {
     marginRight: 15,
+    marginTop: 8,
   },
 });
 
