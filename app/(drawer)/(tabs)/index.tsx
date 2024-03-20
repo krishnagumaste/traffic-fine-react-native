@@ -1,16 +1,27 @@
 import { SimpleLineIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
-import { StyleSheet, Image, Pressable } from 'react-native';
+import { StyleSheet, Image, Pressable, Alert } from 'react-native';
+import SelectDropdown from 'react-native-select-dropdown';
 import { YStack, H2, Theme, H6, Input, SizableText, XStack, Button, Text } from 'tamagui';
 
-export default function TabOneScreen() {
-  //add date to the data to be sent from here itself
+const countries = [
+  'No Helmet',
+  'No Seat Belt',
+  'Drink and Drive',
+  'Jumping Red Signal',
+  'Speeding',
+  'Rash Driving',
+  'Driving In Wrong Way',
+  'No Parking',
+  'Driving Without License',
+  'Lapsed Insurance',
+];
 
+export default function TabOneScreen() {
   const [fineType, setFineType] = useState('');
   const [fineLocation, setFineLocation] = useState('');
   const [image, setImage] = useState('');
-  // const [date, setDate] = useState('');
 
   const clickImage = async () => {
     try {
@@ -52,18 +63,44 @@ export default function TabOneScreen() {
     setImage('');
   };
 
+  const handleSubmit = () => {
+    if (!fineType || !fineLocation || !image) {
+      Alert.alert('Please fill in all fields and select an image.');
+    } else {
+      Alert.alert('Fine added successfully. ');
+      // console.log(fineType, fineLocation, image);
+
+      //backend with image handling and add date and time in backend
+
+      setFineType('');
+      setFineLocation('');
+      setImage('');
+    }
+  };
+
   return (
     <Theme name="light">
       <YStack flex={1} alignItems="center">
         <H2 style={styles.header}>Add Fine</H2>
         <H6 style={styles.header6}>Provide Information</H6>
         <XStack alignItems="center" space="$2" style={styles.xstack}>
-          <SizableText size="$3">Enter Fine Type : </SizableText>
-          <Input
-            size="$3"
-            placeholder="No Helmet/Seatbelt"
-            onChangeText={(newText) => setFineType(newText)}
-            value={fineType}
+          <SizableText size="$3">Select Fine Type : </SizableText>
+          <SelectDropdown
+            data={countries}
+            onSelect={(selectedItem) => {
+              setFineType(selectedItem);
+            }}
+            buttonTextAfterSelection={(selectedItem) => {
+              return selectedItem;
+            }}
+            rowTextForSelection={(item) => {
+              return item;
+            }}
+            dropdownStyle={styles.dropdown}
+            buttonStyle={styles.button}
+            buttonTextStyle={styles.buttonText}
+            rowStyle={styles.row}
+            rowTextStyle={styles.rowText}
           />
         </XStack>
         <XStack alignItems="center" space="$2" style={styles.xstack}>
@@ -110,7 +147,7 @@ export default function TabOneScreen() {
           </YStack>
         )}
         <XStack alignItems="center" space="$2" style={styles.xstack}>
-          <Button size="$3" theme="active">
+          <Button size="$3" theme="active" onPress={handleSubmit}>
             Submit
           </Button>
         </XStack>
@@ -133,5 +170,36 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     marginTop: 5,
+  },
+  dropdown: {
+    width: '50%',
+    marginTop: 5,
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: '#ccc',
+    backgroundColor: 'white',
+  },
+  button: {
+    width: '40%',
+    height: 35,
+    justifyContent: 'center',
+    paddingHorizontal: 5,
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: '#ccc',
+    backgroundColor: 'white',
+  },
+  buttonText: {
+    fontSize: 16,
+  },
+  row: {
+    height: 40,
+    justifyContent: 'center',
+    paddingHorizontal: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  rowText: {
+    fontSize: 16,
   },
 });
