@@ -1,9 +1,9 @@
 import { SimpleLineIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
-import { StyleSheet, Image, Pressable, Alert } from 'react-native';
+import { StyleSheet, Image, Alert } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
-import { YStack, H2, Theme, H6, Input, SizableText, XStack, Button, Text } from 'tamagui';
+import { YStack, H2, Theme, H6, Input, SizableText, XStack, Button } from 'tamagui';
 
 const countries = [
   'No Helmet',
@@ -130,20 +130,12 @@ export default function TabOneScreen() {
           </Button>
         </XStack>
         {image !== '' && (
-          <YStack alignItems="center" space="$2" style={styles.xstack}>
+          <YStack alignItems="center" space="$1" style={styles.xstack}>
             <SizableText size="$3">Image Selected : </SizableText>
             <Image source={{ uri: image }} style={styles.image} />
-            <Pressable onPress={removeImage}>
-              <Text
-                color="red"
-                fontFamily="$body"
-                fontSize={10}
-                hoverStyle={{
-                  color: '$colorHover',
-                }}>
-                Remove Image
-              </Text>
-            </Pressable>
+            <Button size="$3" variant="outlined" color="$red10Light" onPress={removeImage}>
+              Remove Image
+            </Button>
           </YStack>
         )}
         <XStack alignItems="center" space="$2" style={styles.xstack}>
