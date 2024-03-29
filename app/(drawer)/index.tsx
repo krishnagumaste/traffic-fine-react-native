@@ -41,11 +41,11 @@ const Page = () => {
           <YStack padding="$3" minWidth={300} space="$4">
             <XStack alignItems="center" space="$2">
               <FontAwesome name="user-circle-o" size={24} color="black" />
-              <Input flex={1} id="email" placeholder="email"  keyboardType="email-address" autoComplete="email"/>
+              <Input flex={1} placeholder="email"  keyboardType="email-address" autoComplete="email"/>
             </XStack>
             <XStack alignItems="center" space="$2">
               <Entypo name="lock" size={24} color="black" />
-              <Input flex={1} id="password" placeholder="password" textContentType="password" autoComplete="current-password" secureTextEntry/>
+              <Input flex={1} placeholder="password" textContentType="password" autoComplete="current-password" secureTextEntry/>
             </XStack>
           </YStack>
 

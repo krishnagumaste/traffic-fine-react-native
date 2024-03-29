@@ -40,11 +40,11 @@ const Page = () => {
           <YStack padding="$3" minWidth={300} space="$4">
             <XStack alignItems="center" space="$2">
               <MaterialCommunityIcons name="badge-account-horizontal" size={24} color="black" />
-              <Input flex={1} id="badge_no" placeholder="badge-no" keyboardType="number-pad"/>
+              <Input flex={1} placeholder="badge-no" keyboardType="number-pad"/>
             </XStack>
             <XStack alignItems="center" space="$2">
               <Entypo name="lock" size={24} color="black" />
-              <Input flex={1} id="password" placeholder="password" textContentType="password" secureTextEntry/>
+              <Input flex={1} placeholder="password" textContentType="password" secureTextEntry/>
             </XStack>
           </YStack>
 
