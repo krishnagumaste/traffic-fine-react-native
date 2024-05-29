@@ -2,13 +2,17 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { Pressable, StyleSheet } from 'react-native';
-import { YStack, H2, Theme, SizableText, XStack } from 'tamagui';
+import { YStack, H2, Theme, SizableText, XStack, Image } from 'tamagui';
 
 const Page = () => {
   return (
     <Theme name="light">
       <YStack flex={1} alignItems="center" justifyContent="center">
-        <H2>Index</H2>
+        <H2>Fine Scan Pro</H2>
+        <Image
+          source={require('C:/Users/Krishna Gumaste/Desktop/react-native/test/app/logo.jpeg')} // adjust the path to your actual image location
+          style={{ width: 150, height: 200, marginTop: 10, marginBottom: 10 , borderRadius: 10}}
+        />
         <Link href="/(drawer)" asChild>
             <Pressable>
               {({ pressed }) => (

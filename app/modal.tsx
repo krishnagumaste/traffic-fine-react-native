@@ -3,9 +3,11 @@ import { StatusBar } from 'expo-status-bar';
 import { Platform } from 'react-native';
 import { YStack, Paragraph, Theme, Button } from 'tamagui';
 
+import { ip } from './ip';
+
 const handleSubmit = async () => {
   try {
-    const res = await axios.get(`http://192.168.0.110:5000/test`);
+    const res = await axios.get(`http://` + ip + `/test`);
     console.log(res.data);
   } catch (error) {
     console.log(error);

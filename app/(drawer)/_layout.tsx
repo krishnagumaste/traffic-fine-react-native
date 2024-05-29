@@ -6,8 +6,8 @@ const DrawerLayout = () => (
     <Drawer.Screen
       name="index"
       options={{
-        headerTitle: 'User Login',
-        drawerLabel: 'User Login',
+        headerTitle: 'User',
+        drawerLabel: 'User',
         drawerIcon: ({ size, color }) => (
           <FontAwesome6 name="user-large" size={size} color={color} />
         ),
@@ -16,23 +16,23 @@ const DrawerLayout = () => (
     <Drawer.Screen
       name="two"
       options={{
-        headerTitle: 'Traffic Police Login',
-        drawerLabel: 'Traffic Police Login',
+        headerTitle: 'Traffic Police',
+        drawerLabel: 'Traffic Police',
         drawerIcon: ({ size, color }) => (
           <FontAwesome6 name="user-secret" size={24} color="black" />
         ),
       }}
     />
-    <Drawer.Screen
+    {/* <Drawer.Screen
       name="three"
       options={{
-        headerTitle: 'Admin Login',
-        drawerLabel: 'Admin Login',
+        headerTitle: 'Admin',
+        drawerLabel: 'Admin',
         drawerIcon: ({ size, color }) => (
           <FontAwesome6 name="user-gear" size={size} color={color} />
         ),
       }}
-    />
+    /> */}
   </Drawer>
 );
 

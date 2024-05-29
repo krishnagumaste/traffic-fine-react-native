@@ -41,12 +41,12 @@ export default function RootLayout() {
           <Stack.Screen
             name="(tabs)"
             options={{
-              title: 'Dashboard',
+              title: 'User',
               presentation: 'fullScreenModal',
               headerBackVisible: false,
               gestureEnabled: false,
               headerRight: () => (
-                <Link href="/modal" asChild>
+                <Link href="/(drawer)/" asChild>
                   <Pressable>
                     {({ pressed }) => (
                       <XStack alignItems="center">
@@ -72,11 +72,11 @@ export default function RootLayout() {
           <Stack.Screen
             name="(tabs2)"
             options={{
-              title: 'Dashboard',
+              title: 'Traffic Police',
               presentation: 'fullScreenModal',
               headerBackVisible: false,
               headerRight: () => (
-                <Link href="/modal" asChild>
+                <Link href="/(drawer)/two" asChild>
                   <Pressable>
                     {({ pressed }) => (
                       <XStack alignItems="center">
@@ -102,11 +102,11 @@ export default function RootLayout() {
           <Stack.Screen
             name="(tabs3)"
             options={{
-              title: 'Dashboard',
+              title: 'Admin',
               presentation: 'fullScreenModal',
               headerBackVisible: false,
               headerRight: () => (
-                <Link href="/modal" asChild>
+                <Link href="/(drawer)/three" asChild>
                   <Pressable>
                     {({ pressed }) => (
                       <XStack alignItems="center">
@@ -130,6 +130,27 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen name="modal" options={{ title: 'LogOut', presentation: 'modal' }} />
+          <Stack.Screen
+            name="forgotpassword"
+            options={{ title: 'Forgot Password', presentation: 'modal' }}
+          />
+          <Stack.Screen
+            name="createaccount"
+            options={{ title: 'Create Account', presentation: 'modal' }}
+          />
+          <Stack.Screen name="otp" options={{ title: 'Otp Verification', presentation: 'modal' }} />
+          <Stack.Screen
+            name="otpforforgotpassword"
+            options={{ title: 'Otp Verification', presentation: 'modal' }}
+          />
+          <Stack.Screen
+            name="changepassword"
+            options={{ title: 'Change Password', presentation: 'modal' }}
+          />
+          <Stack.Screen
+            name="failedtogenerate"
+            options={{ title: 'Failed To Generate', presentation: 'modal' }}
+          />
         </Stack>
       </GestureHandlerRootView>
     </TamaguiProvider>
